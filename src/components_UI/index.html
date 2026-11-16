@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f1">
+  <meta name="description" content="An exploratory comparison of human lncRNA–HPV16 exact sequence matches and IntaRNA interaction energies against 500 shuffled controls.">
+  <title>Human lncRNA × HPV16 — BINF research project</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to results</a>
+  <header class="site-header">
+    <div class="header-inner page-width">
+      <a class="brand" href="#overview" aria-label="BINF RNA Interactions home">
+        <span class="brand-mark" aria-hidden="true">b.</span>
+        <span>BINF<span class="brand-subtitle">RNA interactions</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#distributions">Distributions</a>
+        <a href="#comparison">Comparison</a>
+        <a href="#candidates">Candidates</a>
+        <a href="#methods">Methods</a>
+      </nav>
+      <a class="button button-small button-outline header-download" id="download" href="data/candidate-comparison.csv" download>Download results <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero page-width" id="overview" aria-labelledby="project-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Exploratory computational analysis</p>
+        <h1 id="project-title">From sequence matches to <em>interaction energies.</em></h1>
+        <p class="hero-description">Five human lncRNAs. One 573-nt HPV16 E6*I/E7 RNA region. We asked whether predicted interactions stand out against shuffled viral sequences.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#distributions">Explore the results <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="#methods">How the comparison works <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="hero-context">Human lncRNA × HPV16 <span aria-hidden="true">·</span> GENCODE v50 <span aria-hidden="true">·</span> IntaRNA 3.4.1</p>
+      </div>
+      <div class="hero-visual">
+        <div class="featured-chart-topline">
+          <p class="eyebrow">Original RNA vs 100 shuffles</p>
+          <span class="chart-unit">kcal/mol</span>
+        </div>
+        <div class="featured-chart-heading">
+          <h2>LINC00869</h2>
+          <p class="mono">ENST00000778197.1</p>
+        </div>
+        <div id="hero-chart" class="hero-chart" aria-label="LINC00869 original energy and shuffled-control distribution"></div>
+        <div class="chart-legend" aria-label="Chart legend">
+          <span><i class="legend-bar" aria-hidden="true"></i> Shuffled controls</span>
+          <span><i class="legend-line" aria-hidden="true"></i> Original energy</span>
+        </div>
+        <div class="featured-chart-finding">
+          <strong>8 of 100 controls</strong>
+          <p>had an equally or more favorable energy for this transcript.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview-band" aria-label="Results overview">
+      <div class="overview-inner page-width">
+        <div class="overview-statement">
+          <p class="eyebrow">The overall finding</p>
+          <h2>Favorable predictions also appear in shuffled RNA.</h2>
+        </div>
+        <div class="metric"><strong>5</strong><span>exploratory candidates</span></div>
+        <div class="metric"><strong>500</strong><span>completed energy controls</span></div>
+        <div class="metric"><strong>0</strong><span>energy tail fractions below 0.05</span></div>
+      </div>
+    </section>
+
+    <section class="section page-width" id="distributions" aria-labelledby="distributions-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Step 5 · Interaction-energy comparison</p>
+          <h2 id="distributions-title">A prediction in context.</h2>
+        </div>
+        <p>Each panel shows 100 actual control energies. The original RNA is marked in coral. More negative energies are more favorable within the model.</p>
+      </div>
+      <div class="chart-toolbar">
+        <div class="chart-legend">
+          <span><i class="legend-bar" aria-hidden="true"></i> Shuffled viral RNA</span>
+          <span><i class="legend-line" aria-hidden="true"></i> Original viral RNA</span>
+        </div>
+        <button class="text-button" id="download-charts" type="button">Download charts <span aria-hidden="true">↓</span></button>
+      </div>
+      <p class="chart-scale-note" id="chart-scale-note">All panels use common bin edges and the same energy and count scales.</p>
+      <div id="distribution-grid" class="distribution-grid" aria-live="polite">
+        <p class="loading-message">Loading verified control energies…</p>
+      </div>
+    </section>
+
+    <section class="comparison-section" id="comparison" aria-labelledby="comparison-title">
+      <div class="section page-width">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The five-candidate comparison</p>
+            <h2 id="comparison-title">Raw energy and relative evidence.</h2>
+          </div>
+          <p>LINC00869 has the smallest energy tail fraction. The four related candidates have more negative original energies. Every tail fraction remains above 0.05.</p>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Candidate results comparison, horizontally scrollable">
+          <table id="comparison-table">
+            <caption class="visually-hidden">Original energies compared with 100 shuffled controls for each human transcript. Energies are in kcal/mol.</caption>
+            <thead>
+              <tr>
+                <th scope="col"><button type="button" data-sort="id">Transcript <span aria-hidden="true">↕</span></button></th>
+                <th scope="col"><button type="button" data-sort="length">Gene / length <span aria-hidden="true">↕</span></button></th>
+                <th scope="col" class="numeric"><button type="button" data-sort="original_energy">Original E <span aria-hidden="true">↕</span></button></th>
+                <th scope="col" class="numeric"><button type="button" data-sort="shuffled_mean">Shuffled mean <span aria-hidden="true">↕</span></button></th>
+                <th scope="col" class="numeric"><button type="button" data-sort="shuffled_median">Shuffled median <span aria-hidden="true">↕</span></button></th>
+                <th scope="col" class="numeric"><button type="button" data-sort="controls_le_original">Controls ≤ original <span aria-hidden="true">↕</span></button></th>
+                <th scope="col" class="numeric"><button type="button" data-sort="tail_fraction">Energy tail fraction <span aria-hidden="true">↕</span></button></th>
+              </tr>
+            </thead>
+            <tbody id="comparison-body"></tbody>
+          </table>
+        </div>
+        <div class="table-note"><p>All energies are kcal/mol. The tail fraction is (count + 1) / 101, counting controls with E ≤ the original energy.</p><a class="text-link" href="data/candidate-comparison.csv" download>Download comparison CSV <span aria-hidden="true">↓</span></a></div>
+      </div>
+    </section>
+
+    <section class="section page-width" id="candidates" aria-labelledby="candidates-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Full transcripts · Shared sequence context</p>
+          <h2 id="candidates-title">Distinct RNAs, related observations.</h2>
+        </div>
+        <p>All five full sequences differ. Four share a 626-nt block containing all their exact matches and the same original predicted interaction subsequences.</p>
+      </div>
+      <div class="candidate-selector-row">
+        <label for="candidate-select">Explore a transcript</label>
+        <select id="candidate-select" aria-controls="candidate-detail"><option value="">Loading candidates…</option></select>
+      </div>
+      <div id="candidate-detail" class="candidate-detail" aria-live="polite"></div>
+      <div class="relationship-note">
+        <div class="relationship-symbol" aria-hidden="true">↔</div>
+        <div><h3>Four candidates share the same sequence signal.</h3><p>The 31-match transcripts share an identical 626-nt region. Their original IntaRNA predictions use identical human and viral span sequences within that region. Their results are related observations.</p></div>
+      </div>
+    </section>
+
+    <section class="interpretation-section" aria-labelledby="interpretation-title">
+      <div class="section page-width interpretation-layout">
+        <div class="interpretation-intro">
+          <p class="eyebrow">Reading the evidence</p>
+          <h2 id="interpretation-title">A useful signal needs a careful baseline.</h2>
+          <p>The original energies are more favorable than the average shuffled energy. Comparable or stronger predictions still occur in 8–16 controls per candidate.</p>
+        </div>
+        <div class="interpretation-points">
+          <article><p class="eyebrow">Step 4 · Exact-match screening</p><h3>No transcript passed BH FDR 0.05.</h3><p>All 197,195 transcripts were included in correction. The smallest BH-adjusted value was about 0.679814. The five candidates were selected through exploratory, data-driven criteria.</p></article>
+          <article><p class="eyebrow">Step 5 · Interaction energies</p><h3>No energy tail fraction is below 0.05.</h3><p>These fractions summarize equally or more favorable shuffled predictions. They are separate from Step 4 p-values and BH-adjusted values.</p></article>
+          <article><p class="eyebrow">Scope of the study</p><h3>Computational evidence needs experimental follow-up.</h3><p>Many overlapping CCU-rich windows can describe one repeat-rich region. Shuffling preserves nucleotide counts while allowing dinucleotide frequencies and potential structure to change. Biological binding and therapeutic activity remain experimentally untested.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section page-width methods-section" id="methods" aria-labelledby="methods-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Methods &amp; reproducibility</p><h2 id="methods-title">The calculation behind the comparison.</h2></div>
+        <p>Full RNA sequences, a shared control pool, and one best reported interaction per pair.</p>
+      </div>
+      <div class="methods-layout">
+        <div class="methods-accordion">
+          <details open><summary>How were the candidates selected?</summary><div class="details-body"><p>GENCODE v50 lncRNAs were screened for exact reverse-complement 10-mers against the 573-nt HPV16 E6*I/E7 spliced RNA region. The corrected search used 564 overlapping viral windows at step 1.</p><p>Shortlisting required at least three real matches, two nonoverlapping human sites, a real count above its shuffled mean, and an unadjusted empirical p-value ≤ 0.05. Selection used the same dataset being explored.</p></div></details>
+          <details><summary>How were energies predicted?</summary><div class="details-body"><p>IntaRNA 3.4.1 with ViennaRNA 2.7.0 compared each full human RNA with the original viral RNA and the same 100 saved viral shuffles. Inputs retained their original 5′→3′ order, with T converted to U.</p><p>Local accessibility windows were 150 nt with a maximum intramolecular base-pair span of 100 nt. Heuristic mode used a 7-base-pair seed. Each pair contributed one best reported interaction.</p><p>The energy combines hybridization with accessibility and opening costs. More negative values are more favorable within this model.</p></div></details>
+          <details><summary>What does the energy tail fraction mean?</summary><div class="details-body"><p>Count the shuffled energies equally or more favorable than the original, add one, and divide by 101.</p><p class="formula">(count(E<sub>shuffle</sub> ≤ E<sub>original</sub>) + 1) / 101</p><p>With 100 controls, the minimum value and spacing are 1/101 ≈ 0.009901. This is an exploratory empirical energy comparison. It does not give the probability that binding is false.</p></div></details>
+          <details><summary>What limits the interpretation?</summary><div class="details-body"><p>The candidates were selected from the screening data. Four share extensive sequence, and overlapping repeat windows are correlated. The shuffle model preserves single-nucleotide composition without preserving natural RNA sequence organization.</p><p>None of the 197,195 screened transcripts passed Step 4 BH FDR 0.05. The energy controls leave that result unchanged. No experimental binding or therapeutic activity was established.</p></div></details>
+        </div>
+        <aside class="download-panel">
+          <p class="eyebrow">Open the data</p>
+          <h3>Every plotted value comes from a saved control.</h3>
+          <p>Download the compact results and all 500 measured control energies for your own inspection.</p>
+          <a class="download-item" href="data/candidate-comparison.csv" download><span><strong>Candidate comparison</strong><small>5 transcripts · CSV</small></span><span aria-hidden="true">↓</span></a>
+          <a class="download-item" href="data/control-energies.csv" download><span><strong>Control energies</strong><small>500 reported interactions · CSV</small></span><span aria-hidden="true">↓</span></a>
+          <a class="download-item" href="data/website-data.json" download><span><strong>Data &amp; provenance</strong><small>Source paths and analysis definitions · JSON</small></span><span aria-hidden="true">↓</span></a>
+          <p class="download-note">All 500 control jobs completed with reported interactions. Failed, missing and no-interaction outcomes were zero.</p>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="page-width footer-main">
+        <div><a class="footer-brand" href="#overview">BINF · Human lncRNA × HPV16</a><p>Exploratory computational analysis</p></div>
+        <details class="provenance"><summary id="toggle-provenance">View source provenance <span aria-hidden="true">+</span></summary><pre id="provenance-details">Source verification details load with the project data.</pre></details>
+      </div>
+      <div class="page-width footer-bottom"><span>GENCODE v50 · IntaRNA 3.4.1 · ViennaRNA 2.7.0</span><a href="#overview">Back to top ↑</a></div>
+    </footer>
+  </main>
+  <div id="site-status" class="visually-hidden" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "status": "verified",
+  "candidate_count": 5,
+  "unique_transcript_shuffle_pairs": 500,
+  "all_control_energy_values_match_original_job_status": true,
+  "all_means_medians_inclusive_tail_counts_and_fractions_verified": true,
+  "all_original_prediction_coordinates_and_accessibility_costs_verified": true,
+  "all_candidate_genes_lengths_repeats_and_step4_statistics_verified": true,
+  "histograms_share_verified_common_bin_edges_and_count_axis": true,
+  "all_500_controls_counted_in_histogram_bins": true,
+  "both_csv_downloads_match_verified_data": true,
+  "original_source_hashes_checked": 19,
+  "all_provenance_source_hashes_preserved": true,
+  "local_links_assets_and_navigation_destinations_exist": true,
+  "energy_tail_cutoff_0_05_passes": 0,
+  "step4_bh_cutoff_0_05_passes": 0,
+  "browser_checks_included": false
+}

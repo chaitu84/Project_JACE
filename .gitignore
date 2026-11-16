@@ -1,4 +1,10 @@
 /data/gencode.v50.transcripts.fa.gz
+/data/gencode*.fa
+/data/gencode*.fa.gz
 results/
 __pycache__/
 *.pyc
+
+# Browser network captures are local diagnostic files.
+*.har
+*.har.txt

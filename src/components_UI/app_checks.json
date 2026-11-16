@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "actual_control_energies_checked": 500,
+  "panels": [
+    {
+      "transcript": "ENST00000778197.1",
+      "bins": 13,
+      "control_count": 100
+    },
+    {
+      "transcript": "ENST00000732616.1",
+      "bins": 13,
+      "control_count": 100
+    },
+    {
+      "transcript": "ENST00000780340.1",
+      "bins": 13,
+      "control_count": 100
+    },
+    {
+      "transcript": "ENST00000732615.1",
+      "bins": 13,
+      "control_count": 100
+    },
+    {
+      "transcript": "ENST00000754042.1",
+      "bins": 13,
+      "control_count": 100
+    }
+  ],
+  "shared_integer_count_ticks": [
+    0,
+    5,
+    10,
+    15,
+    20,
+    25
+  ],
+  "invalid_values_rejected": true,
+  "last_upper_edge_included": true,
+  "svg_original_markers_and_axes_verified": true,
+  "javascript_syntax": "passed",
+  "browser_visual_and_console_checks": "blocked because Computer Use could not verify the current Chrome URL"
+}

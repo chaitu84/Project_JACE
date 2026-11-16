@@ -1,0 +1,117 @@
+{
+  "status": "verified",
+  "discrepancies": [],
+  "unique_transcript_shuffle_pairs": 500,
+  "candidates_checked": 5,
+  "controls_per_candidate": 100,
+  "completed_with_interaction": 500,
+  "failed": 0,
+  "missing": 0,
+  "no_interaction": 0,
+  "all_500_native_csvs_receipts_requests_commands_versions_and_artifact_hashes_verified": true,
+  "means_medians_inclusive_tail_counts_and_fractions_independently_recomputed": true,
+  "all_expected_user_results_agree": true,
+  "all_scientific_source_hashes_preserved": true,
+  "protected_source_file_count": 4135,
+  "protected_source_index_sha256": "c94664e6285699b35f64e55e073c543f407d99e85941bc970c82e5af3ef3b0ea",
+  "notes": [
+    "The earlier original-prediction summary retains its historical energy-controls-pending field. Current completion is established by the verified 500-job invocation."
+  ],
+  "source_files": [
+    {
+      "path": "results/step5/exploratory_controls/control_plan.json",
+      "sha256": "78f8fbc4094cd7ab3b16d38b00633390be1d7a0d0b0bed49ee9b128598c58a63",
+      "role": "Verified input and settings plan"
+    },
+    {
+      "path": "results/step5/exploratory_controls/results/invocations/run_20261116T051139789910Z_0558ca3f/run_status.json",
+      "sha256": "f00f5adae6c033d00a15da05d05cc516fcfa5ddd6015eba72054ecc6b87cc6ca",
+      "role": "Completed control-run status"
+    },
+    {
+      "path": "results/step5/exploratory_controls/results/invocations/run_20261116T051139789910Z_0558ca3f/version.stdout.log",
+      "sha256": "b2a3bdf1e32f51704400e20a5828300c61a207aaafd88b47223dcf8bc793c860",
+      "role": "Software version output"
+    },
+    {
+      "path": "results/step5/exploratory_controls/results/invocations/run_20261116T051139789910Z_0558ca3f/summary.csv",
+      "sha256": "dc3b2341bdf5fee5eae40275cfb0fb9980eb8ee0af61a373c11c4526788a6f91",
+      "role": "Saved per-transcript energy summary"
+    },
+    {
+      "path": "results/step5/exploratory_controls/results/invocations/run_20261116T051139789910Z_0558ca3f/summary.json",
+      "sha256": "074049f9a226a229f701f5fb8d93d06a0f4cddd4f057801de7cc962900d4f05c",
+      "role": "Saved machine-readable energy summary"
+    },
+    {
+      "path": "results/step5/exploratory_controls/results/invocations/run_20261116T051139789910Z_0558ca3f/summary.md",
+      "sha256": "da1761a2ab9625e12e1b4ec42e39a8be92e8a82fbd8b5abedf4af82189b51473",
+      "role": "Saved human-readable energy summary"
+    },
+    {
+      "path": "results/step5/exploratory_controls/results/invocations/run_20261116T051139789910Z_0558ca3f/job_status.csv",
+      "sha256": "e9bb6f45f99774edbfc5a0801b592e91d965720a27679ed03f6b27853f49fe92",
+      "role": "All 500 actual control energies and attempts"
+    },
+    {
+      "path": "results/step5/exploratory_shortlist/candidate_manifest.csv",
+      "sha256": "dd213482d3b04910816f9d60305b1dce856cfde0c0bd668cf5e4c1c75c7a0bdf",
+      "role": "GENCODE annotations and exact-match geometry"
+    },
+    {
+      "path": "results/step4/transcript_comparison/exploratory_shortlist.csv",
+      "sha256": "63326a9b63864fb27ad95a1b7cdaa1836ed9a74c83a7df25ab049a5bc52dc6d4",
+      "role": "Step 4 exploratory candidate statistics"
+    },
+    {
+      "path": "results/step4/transcript_comparison/per_transcript_comparison.csv",
+      "sha256": "1e2f62618bc9e8e5e67795390723889b7d76c97581e3bbf507164f57c0193045",
+      "role": "Complete Step 4 testing family"
+    },
+    {
+      "path": "results/step4/transcript_comparison/analysis_summary.json",
+      "sha256": "d567e9995e72a94c2f74f7ea28addebc4a18cb1268fd62e3a596fe87bd60f5b3",
+      "role": "Step 4 full-family BH results"
+    },
+    {
+      "path": "results/step5/exploratory_shortlist/match_regions.csv",
+      "sha256": "3c6654da78b56512cb641b4236146e1c4230af75516080189dc22806171e2a8e",
+      "role": "Exact-match overlap regions"
+    },
+    {
+      "path": "results/step5/exploratory_shortlist/predictions/run_20261116T044527Z_4D0EGI/prediction_summary.csv",
+      "sha256": "7aa2997ad6ab49d1add139f9782d73534e28e19cf1d258f7b9273aba7b7af53b",
+      "role": "Original full-sequence prediction coordinates"
+    },
+    {
+      "path": "results/step5/exploratory_shortlist/shared_sequence_blocks.json",
+      "sha256": "914c04b5bfa0257c8dee7c47c9ac723c932715e555d39efc895cf37af6a4f161",
+      "role": "Verified shared sequence blocks"
+    },
+    {
+      "path": "results/step5/exploratory_shortlist/predictions/run_20261116T044527Z_4D0EGI/ENST00000778197.1.csv",
+      "sha256": "bfb1b9f9b953a899c97a082ef191920b4ee95f77cea11940b5cf1985d7eb28ef",
+      "role": "Original full-sequence prediction for ENST00000778197.1"
+    },
+    {
+      "path": "results/step5/exploratory_shortlist/predictions/run_20261116T044527Z_4D0EGI/ENST00000732616.1.csv",
+      "sha256": "108dd665d6925a7795c9e395698aa7108657b62ad6f19c88aabeb1b720b370c6",
+      "role": "Original full-sequence prediction for ENST00000732616.1"
+    },
+    {
+      "path": "results/step5/exploratory_shortlist/predictions/run_20261116T044527Z_4D0EGI/ENST00000780340.1.csv",
+      "sha256": "ddf6389c76d7106fe0a03d90e5663f1fdef565ddcdce51d80dcd7e59fb14b031",
+      "role": "Original full-sequence prediction for ENST00000780340.1"
+    },
+    {
+      "path": "results/step5/exploratory_shortlist/predictions/run_20261116T044527Z_4D0EGI/ENST00000732615.1.csv",
+      "sha256": "606b37b2f85b7022ba5792a85e97c921b4543488ead0b462e90ddc23abe2833c",
+      "role": "Original full-sequence prediction for ENST00000732615.1"
+    },
+    {
+      "path": "results/step5/exploratory_shortlist/predictions/run_20261116T044527Z_4D0EGI/ENST00000754042.1.csv",
+      "sha256": "0e4361a53eed5be25e2a8130fc3353c0e10ac7e56ac1feaa4f10740bd22c4731",
+      "role": "Original full-sequence prediction for ENST00000754042.1"
+    }
+  ]
+}
