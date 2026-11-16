@@ -9,8 +9,8 @@ Install Python 3 and use a modern browser. The prepared data is included with th
 For a new checkout, clone the repository and enter its root directory.
 
 ```text
-git clone https://github.com/chaitu84/BINF_2111.git
-cd BINF_2111
+git clone https://github.com/chaitu84/human-lncrna-hpv16-complementarity.git
+cd human-lncrna-hpv16-complementarity
 ```
 
 For an existing checkout, open a terminal in its root directory and run `git pull` to get the latest version.
