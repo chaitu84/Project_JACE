@@ -75,9 +75,9 @@ The project only looks at **computational evidence**. Experimental validation, c
 
 ## Team
 
-| Name | Major | Role |
-|---|---|---|
-| Jacky | Computer Science | Coder |
-| Arnav | Data Science | Researcher |
-| Cleo. | Computer | Coder |
-| Ekijah| Mathematics & Economics | Researcher |
+| Name | Role |
+|---|---|
+| Jacky | Coder |
+| Arnav | Researcher |
+| Cleo. | Coder |
+| Ekijah| Researcher |
