@@ -1,5 +1,24 @@
-# Theoretical Therapeutic Discovery: HPV RNA Analysis
+# Project_JACE
 BY J.A.C.E (Joint Attachment for Carcinoma Eradication)
+
+## Run the project website
+
+The website presents the completed exploratory human-lncRNA–HPV16 analysis, including five candidates and all 500 saved control energies. Its prepared data is bundled in this repository.
+
+Install Python 3, then clone the repository and start the local server.
+
+```text
+git clone https://github.com/chaitu84/Project_JACE.git
+cd Project_JACE
+```
+
+Windows PowerShell, from the repository root.
+
+```powershell
+py -3 -m http.server 8765 --bind 127.0.0.1 --directory src/components_UI
+```
+
+On macOS or Linux, use `python3` in place of `py -3`. Open **http://127.0.0.1:8765/**. Full instructions are in [the website README](src/components_UI/README.md).
 
 ## Overview
 
@@ -52,7 +71,7 @@ The project only looks at **computational evidence**. Experimental validation, c
 
 ## Current Status
 
-**Midterm — proposal and planning.**
+**HPV16 exploratory analysis completed.** The website presents the verified exact-match screen and interaction-energy controls. All candidates remain exploratory, and none passed Step 4 BH FDR 0.05.
 
 ## Team
 
