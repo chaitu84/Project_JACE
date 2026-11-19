@@ -257,15 +257,22 @@ st.markdown("""
 # FILE PATHS
 # --------------------------------------------------
 
-project = Path(__file__).resolve().parent[2]
+project = Path(__file__).resolve().parents[2]
 
 viral_path = (
     project
-    / "src/config_code/hpv_step2/targets"
+    / "src"
+    / "config_code"
+    / "hpv_step2"
+    / "targets"
     / "HPV16_E6starI_E7_spliced_region.rna.fasta"
 )
 
-human_path = project / "results/lncrna_checks.csv"
+human_path = project / "results" / "lncrna_checks.csv"
+
+print("Project root:", project)
+print("Viral FASTA exists:", viral_path.exists())
+print("Human CSV exists:", human_path.exists())
 
 # --------------------------------------------------
 # DNA ANIMATION
