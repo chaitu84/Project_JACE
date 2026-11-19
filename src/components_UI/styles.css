@@ -379,3 +379,78 @@ thead th { font-size: 11px; }
   .chart-card h3 { font-size: 14px; }
   .section-heading > p { font-size: 14px; }
 }
+
+/* Complementarity explorer, consistent with the original editorial design. */
+.rna-panel { border: 1px solid var(--line); background: var(--white); padding: 28px; border-radius: 4px; }
+.rna-panel-heading { display:flex; justify-content:space-between; gap:18px; align-items:center; }
+.rna-panel-heading h3 { font-family:var(--serif); font-size:32px; font-weight:400; }
+.rna-panel-heading .eyebrow { color:var(--teal); }
+#rna-availability, #rna-status, .rna-helper, .rna-footnote { color:var(--muted); font-size:12px; }
+#rna-status { margin:16px 0; }
+.rna-controls { display:grid; grid-template-columns:1fr 1fr auto; gap:24px; align-items:end; margin-top:24px; }
+.rna-controls label { display:grid; gap:9px; font-size:12px; font-weight:600; }
+.rna-controls select, .rna-filter-row input { border:1px solid var(--line); padding:12px; background:var(--paper); color:var(--ink); border-radius:3px; font:inherit; }
+.rna-controls input[type=range] { width:100%; accent-color:var(--teal); }
+.rna-controls output { color:var(--teal); font-size:12px; }
+.rna-target-details { border-top:1px solid var(--line); padding-top:15px; font-size:12px; }
+.rna-target-details summary { font-weight:600; }
+.rna-target-sequence { overflow-wrap:anywhere; font-family:monospace; color:var(--teal); line-height:2; margin-top:12px; }
+.rna-metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:25px 0; }
+.rna-metric { background:var(--teal-soft); padding:20px; }
+.rna-metric strong { display:block; font-family:var(--serif); font-size:34px; font-weight:400; }
+.rna-metric span { font-size:11px; color:var(--muted); }
+.rna-results-toolbar { display:flex; align-items:center; justify-content:space-between; gap:15px; margin:22px 0 10px; }
+.rna-results-toolbar h3, .rna-chart-card h3 { font-family:var(--serif); font-size:27px; font-weight:400; }
+.rna-filter-row { display:flex; align-items:center; gap:16px; margin:18px 0; font-size:12px; }
+.rna-filter-row input { min-width:250px; }
+.rna-table-wrap { overflow-x:auto; }
+.rna-table { min-width:650px; }
+.rna-table button { background:transparent; border:0; color:var(--teal); text-decoration:underline; cursor:pointer; }
+.rna-table th, .rna-table td { padding:12px; }
+.rna-alignment { border:1px solid var(--line); background:var(--white); margin-top:20px; padding:20px; overflow-x:auto; }
+.rna-alignment h3 { font-size:15px; margin-bottom:12px; }
+.rna-alignment pre { font-family:monospace; font-size:14px; line-height:2; overflow-x:auto; }
+.rna-base { display:inline-block; min-width:1.1em; text-align:center; border-radius:2px; color:#fff; }
+.rna-base-A { background:#147d9b; }.rna-base-U { background:#7058b9; }.rna-base-G { background:#177c67; }.rna-base-C { background:#b37a28; }
+.rna-chart-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:24px; }
+.rna-chart-card { border:1px solid var(--line); background:var(--white); padding:22px; min-width:0; }
+.rna-bar-row { display:grid; grid-template-columns:120px 1fr 48px; gap:10px; align-items:center; margin-top:10px; font-size:10px; }
+.rna-bar-row span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.rna-bar-track { height:12px; background:var(--teal-soft); }.rna-bar-fill { height:100%; background:var(--teal); }
+@media(max-width:760px) { .rna-controls,.rna-chart-grid {grid-template-columns:1fr;} .rna-metrics {grid-template-columns:repeat(2,1fr);} .rna-panel-heading {align-items:start;flex-direction:column;} .rna-filter-row {align-items:start;flex-direction:column;} .rna-filter-row input {min-width:0;width:100%;} }
+
+/* Always-visible illustrative antiparallel RNA alignment */
+.rna-example { margin:24px 0; padding:23px; border:1px solid var(--line); background:var(--white); border-radius:4px; }
+.rna-example > .eyebrow { color:var(--teal); margin-bottom:8px; }
+.rna-example h3 { font-family:var(--serif); font-size:27px; font-weight:400; margin-bottom:18px; }
+.rna-example-strands { overflow-x:auto; padding-bottom:8px; }
+.rna-example-strand { display:flex; align-items:center; gap:12px; min-width:max-content; margin:10px 0; }
+.rna-example-strand strong { width:95px; font-size:12px; font-weight:600; }
+.rna-example-strand > span { font-family:monospace; font-size:13px; }
+.rna-example-bases { display:flex; gap:5px; }
+.rna-example-bases .rna-base { width:28px; padding:3px 0; font-family:monospace; font-size:15px; font-weight:600; }
+.rna-example .rna-footnote { margin-top:12px; }
+
+/* Research visualizations — inherited cream/teal editorial palette. */
+.rna-visual-intro{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;align-items:center;padding:28px 32px;margin:0 0 22px;background:#e9f0eb;border:1px solid var(--line)}
+.rna-visual-copy h3,.rna-info-card h3,.rna-coverage-header h3{font-family:var(--serif);font-weight:400;font-size:clamp(25px,3vw,37px);line-height:1.13;margin:8px 0 12px}
+.rna-visual-copy>p:not(.eyebrow),.rna-info-card>p:not(.eyebrow){font-size:13px;line-height:1.7;color:var(--muted)}
+.rna-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;font-size:11px;color:var(--ink)}
+.rna-legend span{display:inline-flex;align-items:center;gap:6px}.rna-dot{display:inline-block;width:10px;height:10px;border-radius:2px}.rna-dot.a{background:#147d9b}.rna-dot.u{background:#7058b9}.rna-dot.g{background:#177c67}.rna-dot.c{background:#b37a28}
+.rna-helix-stage{background:#f8faf6;border:1px solid #dce6de;padding:8px 12px;text-align:center;overflow:hidden}.rna-helix-stage svg{width:100%;height:auto;display:block}.rna-helix-stage p{font-size:10px;color:var(--muted);margin:0 0 9px}
+.rna-helix-motion{transform-origin:50% 50%;animation:rna-breathe 7s ease-in-out infinite alternate}@keyframes rna-breathe{from{transform:translateY(-5px) scaleY(.85)}to{transform:translateY(5px) scaleY(1.04)}}
+.rna-overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:24px}.rna-info-card{background:var(--white);border:1px solid var(--line);padding:24px;min-width:0}.rna-info-card .eyebrow{color:var(--teal)}
+.rna-target-track{height:19px;margin:26px 0 7px;border:1px solid #bad1c8;background:repeating-linear-gradient(90deg,#e0ece7 0,#e0ece7 11px,#f4f7f3 11px,#f4f7f3 13px)}.rna-target-track-fill{height:100%;width:100%;background:linear-gradient(90deg,#0e6964aa,#6ea6a0aa)}.rna-target-axis,.rna-coverage-axis{display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+.rna-splice-diagram{display:flex;align-items:center;gap:7px;margin:16px 0;flex-wrap:wrap}.rna-splice-diagram span{background:#dcebe4;color:#175d57;padding:10px;font-size:10px}.rna-splice-diagram b{border-top:2px dashed #bd684e;padding:10px 3px 0;font-size:10px;color:#a65a45;font-weight:500}
+.rna-coverage-panel{border:1px solid var(--line);background:var(--white);padding:24px;margin:25px 0}.rna-coverage-header{display:flex;justify-content:space-between;align-items:start;gap:12px}.rna-coverage-header h3{font-size:28px}.rna-coverage-header>span{font-size:11px;color:var(--muted);text-align:right}.rna-coverage-grid{display:grid;grid-template-columns:repeat(48,minmax(0,1fr));gap:3px;margin:18px 0 9px;min-height:75px;align-items:stretch}.rna-coverage-cell{background:rgba(14,105,100,var(--coverage-opacity));border-radius:1px;min-width:0;cursor:help}.rna-coverage-cell:hover,.rna-coverage-cell:focus{outline:2px solid #537f9e;outline-offset:1px}.rna-coverage-panel>.rna-footnote{margin-top:14px}
+@media(max-width:760px){.rna-visual-intro,.rna-overview-grid{grid-template-columns:1fr}.rna-visual-intro{padding:20px}.rna-coverage-grid{gap:1px}.rna-coverage-header{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.rna-helix-motion{animation:none}}
+
+/* Keep the selected alignment adjacent to the illustrative complementary example. */
+#rna-alignment { margin: 0 0 24px; border-left: 3px solid var(--teal); scroll-margin-top: 100px; }
+#rna-alignment:focus { outline: none; }
+
+/* Selected alignment is linked to the viral position map. */
+.rna-coverage-selected{background:#537f9e!important;outline:2px solid #34566f;outline-offset:1px;position:relative;z-index:1}
+.rna-coverage-empty{grid-column:1/-1;align-self:center;margin:0;padding:20px 8px;text-align:center;color:var(--muted);font-size:13px}
+.rna-coverage-panel{scroll-margin-top:90px}

@@ -9,6 +9,7 @@
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
+  <script src="rna-explorer.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to results</a>
@@ -22,7 +23,8 @@
         <a href="#distributions">Distributions</a>
         <a href="#comparison">Comparison</a>
         <a href="#candidates">Candidates</a>
-        <a href="#methods">Methods</a>
+        <a href="#rna-explorer">RNA Explorer</a>
+         <a href="#methods">Methods</a>
       </nav>
       <a class="button button-small button-outline header-download" id="download" href="data/candidate-comparison.csv" download>Download results <span aria-hidden="true">↗</span></a>
     </div>
@@ -141,6 +143,50 @@
         <div class="relationship-symbol" aria-hidden="true">↔</div>
         <div><h3>Four candidates share the same sequence signal.</h3><p>The 31-match transcripts share an identical 626-nt region. Their original IntaRNA predictions use identical human and viral span sequences within that region. Their results are related observations.</p></div>
       </div>
+    </section>
+
+
+    <section class="section page-width" id="rna-explorer" aria-labelledby="explorer-title">
+      <div class="section-heading"><div><p class="eyebrow">Interactive sequence analysis</p><h2 id="explorer-title">Explore RNA complementarity.</h2></div>
+      <p>Screen human GENCODE lncRNA transcripts against the HPV16 E6*I/E7 spliced RNA target. Exact reverse-complement matches are distinct from the verified IntaRNA energy results above.</p></div>
+      <div class="rna-visual-intro">
+        <div class="rna-visual-copy"><p class="eyebrow">The sequence story</p><h3>One viral target. Thousands of human transcripts.</h3><p>Explore complementary sequence windows, inspect antiparallel RNA strands, and see where exact matches fall along the HPV16 spliced target.</p><div class="rna-legend"><span><i class="rna-dot a"></i>Adenine</span><span><i class="rna-dot u"></i>Uracil</span><span><i class="rna-dot g"></i>Guanine</span><span><i class="rna-dot c"></i>Cytosine</span></div></div>
+        <div class="rna-helix-stage" aria-label="Decorative animated double-strand RNA motif"><svg id="rna-helix-svg" viewBox="0 0 400 210" role="img" aria-label="Animated schematic of two complementary strands"></svg><p>Illustrative molecular motif · not a structural model</p></div>
+      </div>
+      <div class="rna-overview-grid">
+        <article class="rna-info-card"><p class="eyebrow">01 / Viral target</p><h3>HPV16 E6*I / E7</h3><p id="rna-target-summary">Loading target metadata from local FASTA…</p><div class="rna-target-track"><div class="rna-target-track-fill"></div></div><div class="rna-target-axis"><span>5′ · position 0</span><span id="rna-target-end">3′ · target end</span></div></article>
+        <article class="rna-info-card"><p class="eyebrow">02 / Splicing context</p><h3>Spliced RNA, not genomic DNA</h3><div class="rna-splice-diagram" aria-label="Conceptual diagram showing joined RNA segments"><span>RNA segment</span><b>Joined transcript</b><span>RNA segment</span></div><p>The input FASTA is labeled as a spliced viral RNA. Exon boundaries and the exact splice junction are <strong>not annotated</strong> in the supplied sequence; this is a conceptual diagram, not a coordinate map.</p></article>
+      </div>
+      <div class="rna-panel">
+        <div class="rna-panel-heading"><div><p class="eyebrow">Live local analysis</p><h3>Run an exact-match screen</h3></div><span id="rna-availability" role="status">Checking local data…</span></div>
+        <form id="rna-form" class="rna-controls">
+          <label>Match length <span class="rna-helper">8–20 nucleotides</span><input id="rna-k" type="range" min="8" max="20" value="10"><output id="rna-k-value" for="rna-k">10 nt</output></label>
+          <label for="rna-limit">Human transcripts to analyze<select id="rna-limit"><option value="100">Up to 100</option><option value="500">Up to 500</option><option value="1000">Up to 1,000</option><option value="10000">Up to 10,000</option><option value="50000">Up to 50,000</option><option value="197195">Up to 197,195</option></select></label>
+          <button class="button button-primary" id="rna-submit" type="submit">Run analysis</button>
+        </form>
+        <p id="rna-status" role="status" aria-live="polite">The analysis runs on your local Flask server. Large searches may take time.</p>
+        <details class="rna-target-details"><summary>Inspect HPV16 E6*I/E7 spliced target sequence</summary><div id="rna-target">Loading target…</div></details>
+      </div>
+      <div class="rna-example" aria-label="Illustrative 10 nucleotide complementary RNA alignment">
+        <p class="eyebrow">Example complementary match · 10 nt</p>
+        <h3>How to read an antiparallel alignment</h3>
+        <div class="rna-example-strands">
+          <div class="rna-example-strand"><strong>Viral RNA</strong><span>5′</span><div class="rna-example-bases"><span class="rna-base rna-base-A">A</span><span class="rna-base rna-base-U">U</span><span class="rna-base rna-base-G">G</span><span class="rna-base rna-base-C">C</span><span class="rna-base rna-base-U">U</span><span class="rna-base rna-base-A">A</span><span class="rna-base rna-base-G">G</span><span class="rna-base rna-base-C">C</span><span class="rna-base rna-base-U">U</span><span class="rna-base rna-base-A">A</span></div><span>3′</span></div>
+          <div class="rna-example-strand"><strong>Human RNA</strong><span>3′</span><div class="rna-example-bases"><span class="rna-base rna-base-U">U</span><span class="rna-base rna-base-A">A</span><span class="rna-base rna-base-C">C</span><span class="rna-base rna-base-G">G</span><span class="rna-base rna-base-A">A</span><span class="rna-base rna-base-U">U</span><span class="rna-base rna-base-C">C</span><span class="rna-base rna-base-G">G</span><span class="rna-base rna-base-A">A</span><span class="rna-base rna-base-U">U</span></div><span>5′</span></div>
+        </div>
+        <p class="rna-footnote">Illustrative sequence only, not a measured transcript or project result. After running an analysis, select “View alignment” to inspect a real match below.</p>
+      </div>
+      <div class="rna-alignment" id="rna-alignment" aria-live="polite" tabindex="-1"><h3>Selected transcript alignment</h3><p>Run an analysis, then choose “View alignment” in the results table to inspect a real complementary match here.</p></div>
+      <div class="rna-coverage-panel"><div class="rna-coverage-header"><div><p class="eyebrow">03 / Viral position map</p><h3>Where matches land along the target</h3></div><span id="rna-coverage-summary">Run an analysis to populate coverage</span></div><div id="rna-coverage" class="rna-coverage-grid" aria-label="Coverage intensity by viral target position"><p class="rna-coverage-empty">Run an analysis to display the viral position map. Selecting a match will highlight its location here.</p></div><div class="rna-coverage-axis"><span>5′ · 0</span><span id="rna-coverage-end">3′ · target end</span></div><p class="rna-footnote"><strong>Slate blue = selected complementary match.</strong> After selecting “View alignment,” the slate-blue region marks that match on the viral target. Each cell represents a target-position interval. Intensity shows the number of exact-match windows overlapping that interval; overlapping matches are counted separately. Hover or focus on a cell for its range and count.</p></div>
+      <div id="rna-results" hidden>
+        <div class="rna-metrics" id="rna-metrics"></div>
+        <div class="rna-results-toolbar"><h3>Sequence matches</h3><a id="rna-download" class="text-link" href="#">Download complete CSV ↓</a></div>
+        <p class="rna-footnote">The table shows up to 200 preview rows. Coordinates are zero-based, end-exclusive. Match counts include overlapping windows and repeated sites.</p>
+        <div class="rna-filter-row"><label for="rna-filter">Search transcript ID</label><input id="rna-filter" type="search" placeholder="ENST000…"></div>
+        <div class="rna-table-wrap"><table class="rna-table"><thead><tr><th>Human transcript</th><th>Human span</th><th>Viral span</th><th>Length</th><th>Inspect</th></tr></thead><tbody id="rna-table-body"></tbody></table></div>
+        <div class="rna-chart-grid"><div class="rna-chart-card"><h3>Top matching transcripts</h3><div id="rna-transcript-chart"></div></div><div class="rna-chart-card"><h3>Matches by viral start region</h3><div id="rna-position-chart"></div></div></div>
+      </div>
+      <p class="rna-footnote">This tool finds exact reverse-complementary k-mers. It does not model RNA accessibility, binding energy, expression, splice-junction annotation, or therapeutic activity. The target FASTA represents the spliced viral RNA; a full exon/junction viewer would require separately verified splice annotations.</p>
     </section>
 
     <section class="interpretation-section" aria-labelledby="interpretation-title">
