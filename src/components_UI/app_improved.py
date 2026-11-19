@@ -257,7 +257,7 @@ st.markdown("""
 # FILE PATHS
 # --------------------------------------------------
 
-project = Path(__file__).resolve().parent
+project = Path(__file__).resolve().parent[2]
 
 viral_path = (
     project
