@@ -21,7 +21,7 @@ On Windows, run this command from the repository root in PowerShell.
 py -3 -m http.server 8765 --bind 127.0.0.1 --directory src/components_UI
 ```
 
-Open **http://127.0.0.1:8765/** in your browser. Keep the server terminal open while viewing the site. Press Ctrl+C to stop it.
+Open **http://127.0.0.1:5050** in your browser. Keep the server terminal open while viewing the site. Press Ctrl+C to stop it.
 
 On macOS, Linux, or Ubuntu/WSL, run this command from the repository root.
 
