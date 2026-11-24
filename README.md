@@ -1,24 +1,102 @@
 # Project_JACE
+
 BY J.A.C.E (Joint Attachment for Carcinoma Eradication)
 
 ## Run the project website
 
-The website presents the completed exploratory human-lncRNA–HPV16 analysis, including five candidates and all 500 saved control energies. Its prepared data is bundled in this repository.
+The website presents the completed exploratory human-lncRNA–HPV16 analysis, including five candidates, all 500 saved control energies, and an interactive RNA Explorer for live sequence complementarity analysis.
 
-Install Python 3, then clone the repository and start the local server.
+The website uses HTML, CSS, and JavaScript for its interface and a Python Flask backend for computational analysis.
 
-```text
+### Installation
+
+Install Python 3, then clone the repository and enter its root directory.
+
+```bash
 git clone https://github.com/chaitu84/Project_JACE.git
 cd Project_JACE
 ```
 
-Windows PowerShell, from the repository root.
+For an existing checkout, open a terminal in the repository root and run:
 
-```powershell
-py -3 -m http.server 8765 --bind 127.0.0.1 --directory src/components_UI
+```bash
+git pull
 ```
 
-On macOS or Linux, use `python3` in place of `py -3`. Open **http://127.0.0.1:8765/**. Full instructions are in [the website README](src/components_UI/README.md).
+### Windows PowerShell
+
+Install the required dependencies.
+
+```powershell
+py -3 -m pip install flask pandas biopython
+```
+
+Start the server from the repository root.
+
+```powershell
+py -3 src/components_UI/server.py
+```
+
+### macOS or Linux
+
+Install the required dependencies.
+
+```bash
+python3 -m pip install flask pandas biopython
+```
+
+Start the server from the repository root.
+
+```bash
+python3 src/components_UI/server.py
+```
+
+### Access the Website
+
+Open [**http://127.0.0.1:5050/**](http://127.0.0.1:5050/) in your browser.
+
+Keep the server terminal open while viewing the website. Press Ctrl+C to stop it.
+
+The website must be launched through `server.py` to support the interactive RNA Explorer. Python's standard HTTP server does not support live computational analysis.
+
+### Website Features
+
+- Interactive RNA interaction-energy histograms
+- Original versus shuffled RNA comparisons
+- Sortable candidate comparison tables
+- Detailed transcript annotations
+- Interactive RNA Explorer
+- Adjustable k-mer lengths and transcript limits
+- Exact reverse-complementarity screening
+- HPV16 target sequence information
+- Conceptual RNA splicing visualization
+- Color-coded nucleotide alignments
+- Interactive viral position mapping
+- Downloadable computational results and charts
+
+### Required Research Data
+
+The prepared research visualizations are bundled in this repository. Live RNA Explorer analysis requires the HPV16 target sequence:
+
+```text
+src/config_code/hpv_step2/targets/HPV16_E6starI_E7_spliced_region.rna.fasta
+```
+
+It also requires one of the following human lncRNA datasets:
+
+```text
+results/lncrna_checks.csv
+```
+
+or
+
+```text
+data/gencode.v50.lncRNA_transcripts.fa.gz
+```
+
+Large research datasets may need to be obtained or generated separately if they are not included in the local checkout.
+
+Full instructions are available in the [website README](https://github.com/chaitu84/Project_JACE/blob/main/src/components_UI/README.md).
 
 ## Overview
 
@@ -75,9 +153,9 @@ The project only looks at **computational evidence**. Experimental validation, c
 
 ## Team
 
-| Name | Role |
+| **Name** | **Role** |
 |---|---|
 | Jacky | Coder |
 | Arnav | Researcher |
 | Cleo. | Coder |
-| Ekijah| Researcher |
+| Ekijah | Researcher |
